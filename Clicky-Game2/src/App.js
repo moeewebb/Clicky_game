@@ -8,29 +8,10 @@ class App extends Component {
     state = {
      images
     };
-    render() {
-        return (
-            <div className="jum">
-                <h1 className="display-4">Clicky Game</h1>
-                <p className="lead">Click Here to Play a Fun Game today.</p>
-                <hr className="my-4"/>
-                <p>See options below.</p>
-            {
-                this.state.images.map((cartoon, i) => (
-                <Card image={cartoon.largeImageURL}/>
-              ))}
-            </div>
+handleClick = id => {
+    console.log('clicked on',id)
 
-        )
-
-    }
-}
-
-export default App;
-
- //handleClick = id => {
-
- //};
+ };
 
  ///handleIncrement = () => {
 
@@ -43,3 +24,31 @@ export default App;
  //handleShuffle = () => {
 
  //};
+    render() {
+        return (
+            <div className="jum">
+                <h1 className="display-4">Clicky Game</h1>
+                <p className="lead">Click Here to Play a Fun Game today.</p>
+                <hr className="my-4"/>
+                <p>See options below.</p>
+            {
+                this.state.images.map((cars, i) => (
+                <Card 
+                image={cars.url}
+                key={i}
+                onClick={()=>this.handleClick(cars.id)}
+                cars={cars}
+                />
+
+
+              ))}
+            </div>
+
+        )
+
+    }
+}
+
+export default App;
+
+ 
