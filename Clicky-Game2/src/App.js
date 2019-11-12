@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-//import logo from './images';
+import images from './images';
 // eslint-disable-next-line
 import './App.css';
-import Card from './components/card.js';
+import Card from './components/Card/index.js';
 
 class App extends Component {
     state = {
-      //  images 
+     images
     };
     render() {
         return (
