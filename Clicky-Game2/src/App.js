@@ -10,9 +10,38 @@ class App extends Component {
     };
 handleClick = id => {
     console.log('clicked on',id)
+   let clickedCar=this.state.images.find(car=>car.id===id)
+   console.log('new variable', clickedCar)
+
+   this.handleShuffle()
+
+   if (clickedCar.clickedOn===false){
+       clickedCar.clickedOn=true
+       this.setState({
+           images:this.state.images
+       })
+       console.log("set to true")
+       console.log(this.state.images)
+
+   }
+    else{
+       alert("YOU LOST!")
+    }
+ };
+ 
+ //=======================SHUFFLE====================//
+ handleShuffle = () => {
+     this.setState ({
+         images: this.state.images.sort(function(a,b){
+             return 0.5 - Math.random()
+         })
+     })
 
  };
 
+ 
+ 
+ 
  ///handleIncrement = () => {
 
  //};
@@ -21,9 +50,7 @@ handleClick = id => {
 
  //};
 
- //handleShuffle = () => {
-
- //};
+ 
     render() {
         return (
             <div className="jum">
