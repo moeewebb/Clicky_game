@@ -39,25 +39,19 @@ handleClick = id => {
 
  };
 
- 
- 
- 
- ///handleIncrement = () => {
+ handleReset = () => {
 
- //};
 
- //handleReset = () => {
-
- //};
+ };
 
  
     render() {
         return (
             <div className="jum">
                 <h1 className="display-4">Clicky Game</h1>
-                <p className="lead">Click Here to Play a Fun Game today.</p>
+                <p className="lead">Click to Play.</p>
                 <hr className="my-4"/>
-                <p>See options below.</p>
+                
             {
                 this.state.images.map((cars, i) => (
                 <Card 
