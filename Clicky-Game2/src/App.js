@@ -26,6 +26,7 @@ handleClick = id => {
    }
     else{
        alert("YOU LOST!")
+       this.handleReset()
     }
  };
  
